@@ -1,8 +1,8 @@
 # Tiny Stack VM — make.fun ISA v1
 
 [![tiny-stack-vm-01-run-20261122](https://make.fun/badge/tiny-stack-vm-01-run-20261122.svg)](https://make.fun/bounty/tiny-stack-vm-01-run-20261122)
-[![rank](https://make.fun/badge/tiny-stack-vm-01-run-20261122/{owner}/{repo}/rank.svg)](https://make.fun/bounty/tiny-stack-vm-01-run-20261122)
-[![reward](https://make.fun/badge/tiny-stack-vm-01-run-20261122/{owner}/{repo}/reward.svg)](https://make.fun/bounty/tiny-stack-vm-01-run-20261122)
+[![rank](https://make.fun/badge/tiny-stack-vm-01-run-20261122/zacxy-y/tiny-stack-vm/rank.svg)](https://make.fun/bounty/tiny-stack-vm-01-run-20261122)
+[![reward](https://make.fun/badge/tiny-stack-vm-01-run-20261122/zacxy-y/tiny-stack-vm/reward.svg)](https://make.fun/bounty/tiny-stack-vm-01-run-20261122)
 
 A stack virtual machine implementing make.fun's tiny stack ISA v1 (32-bit wrapping arithmetic, 256-value stack, 256-word memory, 40 programs per set).
 
