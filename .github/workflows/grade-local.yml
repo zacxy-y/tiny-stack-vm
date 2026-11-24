@@ -1,0 +1,38 @@
+name: Grade Local
+
+on:
+  workflow_dispatch:
+    inputs:
+      kit_slug:
+        description: 'Competition kit slug'
+        required: true
+        default: 'tiny-stack-vm-01-run-20261122'
+      bot_path:
+        description: 'Path to bot repository'
+        required: true
+        default: '.'
+
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout bot repository
+        uses: actions/checkout@v4
+        with:
+          path: bot
+
+      - name: Download competition kit
+        run: |
+          curl -sSL "https://make.fun/c/${{ github.event.inputs.kit_slug }}/kit" | tar xz
+          echo "KIT_PATH=$PWD/${{ github.event.inputs.kit_slug }}-kit" >> $GITHUB_ENV
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run grade-local (process driver)
+        run: |
+          cd ${{ env.KIT_PATH }}
+          node cli/makefun.mjs grade-local --kit . --bot ../bot --driver process
